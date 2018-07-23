@@ -13,33 +13,28 @@ $(function() {
 		var currentWord;
 		
 		// Split user input into an array
-		var size = userInput.split("\n");
-		var board;
+		var board = userInput.split("\n");
+		var len = board.length;
 		
-		/*for(var j = 0; j < size.length; j++){
-			for(var k = 0; k < size.length; k++){
-				board[j][k] = size[j].charAt(k);
-			}
-		}*/
-		
-		// Search every possibility on the board recursively
-		for(var i = 0; i < size.length; i++){
-				
-		}
+		// Call boardWalk with the size and position
+		boardWalk(len, 0);
 		
         var answer = 'Word: "", Score: ' + topScore; 
-        $('#mazeSolution').html(answer);
+        $('#mazeSolution').html(len);
         event.preventDefault();
     });
 	
 	// Function that recursively walks the board and looks at all possibilities
-	function boardWalk(){
+	// Takes the size of the board and the position
+	function boardWalk(size, pos){
 		/* Making an obviously false assumption that the user won't pass in
 			invalid boards containing unequal numbers of rows and columns, 
 			or things like blank rows or invalid symbols.
 			Given more time rectangles could be supported if it was 
 			desired.*/
 
+		// Special cases for corners and edges
+		return 0;
 		// Will need to pass in dimensions so I can keep track of position
 	}
 	
