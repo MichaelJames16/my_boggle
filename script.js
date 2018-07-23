@@ -4,13 +4,44 @@ $(function() {
 		// Get user input
 		var userInput = $('#mazeEntry').val();
 		
-		// Score words that are found
-		var score = scoreWord("yayers");
+		// Highest scoring word found so far
+		var topScore = 0;
+		var topWord;
 		
-        var answer = 'Word: "", Score: '; 
-        $('#mazeSolution').html(score);
+		// Current word being scored
+		var currentScore;
+		var currentWord;
+		
+		// Split user input into an array
+		var size = userInput.split("\n");
+		var board;
+		
+		/*for(var j = 0; j < size.length; j++){
+			for(var k = 0; k < size.length; k++){
+				board[j][k] = size[j].charAt(k);
+			}
+		}*/
+		
+		// Search every possibility on the board recursively
+		for(var i = 0; i < size.length; i++){
+				
+		}
+		
+        var answer = 'Word: "", Score: ' + topScore; 
+        $('#mazeSolution').html(answer);
         event.preventDefault();
     });
+	
+	// Function that recursively walks the board and looks at all possibilities
+	function boardWalk(){
+		/* Making an obviously false assumption that the user won't pass in
+			invalid boards containing unequal numbers of rows and columns, 
+			or things like blank rows or invalid symbols.
+			Given more time rectangles could be supported if it was 
+			desired.*/
+
+		// Will need to pass in dimensions so I can keep track of position
+	}
 	
 	// Function that walks character by character and scores words
 	function scoreWord(word){
@@ -41,7 +72,6 @@ $(function() {
 	}
 
 /* TODO
-- write a word scoring function
 - write recursive board navigation
 */
 });
